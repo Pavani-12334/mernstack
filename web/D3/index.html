@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./style.css">
+    
+</head>
+<body>
+    <form class="login-from" onsubmit="Login(event)">
+        <input type="email" name="" class="login-input" id="email" placeholder="Email" required>
+        <input type="password" name="" class="login-input" id="password" placeholder="password" required>
+        <input type="submit" value="Login" class="login-btn">
+    </form>
+
+    <!--button class="login-btn" onclick="myfunction()"> click</button -->
+</body>
+
+    
+<script>
+    //console.log("Hello")
+    //alert("Hello")
+
+    let x ="Hi";
+    console.log(x);
+    x=30
+    console.log(x);
+    x=false
+    console.log(x);
+    x=null
+    console.log(x);
+    x=true
+    console.log(x);
+    let obj= {
+        name:"a",
+        loc:"b",
+        age:20,
+        isalive:false
+    }
+    let obj2={
+        name:"a1",
+        loc:"b2",
+        age:20,
+        isalive:true
+    }
+    console.log(obj2.name)
+    const { name,loc,age,isalive} = obj2
+    console.log(name)
+   // console.log(obj,obj2);
+    let arr=["a",obj ,x,obj2]
+    //console.log(arr);
+    let arr2=[1,2,3,4,5,6];
+   // console.log(arr2);
+    let arr3=[arr,"sdfj",arr2];
+    let arr4=[...arr,"sdfh",...arr2];
+    console.log(arr3);
+    console.log(arr4);
+
+   // function myfunction() {
+       // console.error("hello man")
+       // console.warn("hello man")
+
+   //myfunction()
+       function Login(event) {
+        event.preventDefault()
+        let email=document.getElementById('email').value;
+        let password=document.getElementById('password').value;
+
+        console.log("Login :" + email + "" + password);
+        if (password.length <5) {
+            alert('password should contain more than 5 letter')
+         } 
+         else if(email === "admin@gmail.com" && password ==="123456") {
+            alert('Login Success !')
+            API()
+         }
+        
+          else {
+            alert('Invalid Credentials !')
+         }
+        }
+   async function API() {
+    console.log("called API");
+    try {
+        const responce = await fetch('https://671b71252c842d92c37feea0.mockapi.io/productsapp/products')
+        if (responce.status === 200) {
+            console.log("success")
+            console.log(await responce.json())
+        }
+        }
+    catch (error) {
+            console.error(error)
+        }
+    
+   }
+    
+</script>
+</html>
