@@ -11,7 +11,7 @@ const Navbar =({appdata,logo})=>
     console.log(numberstate)
     console.log(stringstate)
     console.log(arraystate)
-    
+
     const [count,setCount]=useState(0);
     useEffect(() =>{
     //alert('effect rendered')
