@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.active
-{
-    color: blueviolet;
+.active{
+    color:blueviolet;
+    border: 2px solid blueviolet;
 }
