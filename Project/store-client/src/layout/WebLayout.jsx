@@ -6,6 +6,7 @@ const WebLayout = () => {
     return (
         <>
             <div className=''>
+
                 <Navbar />
                 <Outlet />
             </div>

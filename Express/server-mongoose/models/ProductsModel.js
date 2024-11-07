@@ -3,7 +3,7 @@ const mongoose=require('mongoose')
 
 
 const ProductsSchema=new mongoose.Schema({
-    name:{
+    tittle:{
         type:String,
         required: true
     },
