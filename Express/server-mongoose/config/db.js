@@ -1,6 +1,6 @@
 const mongoose =require('mongoose')
 
-mongoose.connect("mongodb+srv://padigelapavani:123456@@@in-aws.tn8is.mongodb.net/")
+mongoose.connect("mongodb+srv://padigelapavani:123456123456@in-aws.tn8is.mongodb.net/max-store?retryWrites=true&w=majority&appName=In-AWS")
 
 const connection=mongoose.connection;
 
