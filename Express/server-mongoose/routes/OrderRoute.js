@@ -19,7 +19,8 @@ router.post('/add', async (req, res) => {
             res.send(401).json({ message: "All fields required" })
         }
 
-        
+        //TODO : Add User Email & Phone Validation
+        // const EmailCheck = await Users.findOne({ email: email })
         // if (EmailCheck) {
         //     res.send(500).json({ message: `User with ${email} already exists !` })
         // }

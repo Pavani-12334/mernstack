@@ -12,4 +12,3 @@ app.use('/users', Users)
 app.use('/orders', Orders)
 
 app.listen(port, (() => console.log(`Listening on ${port}`)))
-
