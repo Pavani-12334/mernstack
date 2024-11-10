@@ -5,21 +5,18 @@ const bcrypt = require('bcrypt')
 
 router.post('/register', async (req, res) => {
     try {
-        // const newuser = new Users(req.body)
+        
         const { name, email, phone, password } = req.body
         if (!name || !email || !phone || !password) {
             return res.status(401).json({ message: "All fields required" })
         }
 
-        //TODO : Add User Email & Phone Validation
 
-        //Email
         const exisitingemail = await Users.findOne({email})
         if(exisitingemail) {
             return res.status(500).json({ message: `User with ${email} already exists !` })
         }
 
-        //Phone
         const exisitingphone = await Users.findOne({phone})
         if(exisitingphone) {
             return res.status(500).json({ message: `User with ${phone} already exists !` })
@@ -41,15 +38,14 @@ router.post('/register', async (req, res) => {
 
 router.post('/login', async (req, res) => {
     try {
-        // const newuser = new Users(req.body)
+      
         const {  email, password } = req.body
         if (!email || !password) {
             return res.status(401).json({ message: "All fields required" })
         }
 
-        //TODO : Add User Email & Phone Validation
+    
 
-        //Email
         const user = await Users.findOne({email})
         if(!user) {
             return res.status(500).json({ message: `Invalid Email` })

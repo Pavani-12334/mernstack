@@ -19,9 +19,7 @@ router.post('/add', async (req, res) => {
             res.send(401).json({ message: "All fields required" })
         }
 
-        // if (EmailCheck) {
-        //     res.send(500).json({ message: `User with ${email} already exists !` })
-        // }
+        
         await newuser.save()
         res.status(200).json(newuser)
     } catch (error) {
@@ -56,6 +54,10 @@ router.delete('/delete/:id', async (req, res) => {
         res.status(500).json({ message: error.message })
     }
 })
+
+
+module.exports=router
+
 
 
 
