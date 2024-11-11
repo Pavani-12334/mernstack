@@ -4,6 +4,7 @@ import { Pencil, Trash } from 'lucide-react'
 
 const AdminProducts = () => {
   return (
+    
     <div className='w-full h-full flex flex-col justify-start items-start'>
       <AdminPageHeader title='Products' />
       <table className='w-full h-full border-collapse border shadow-lg rounded-md'>

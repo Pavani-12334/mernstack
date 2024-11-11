@@ -4,7 +4,7 @@ const Products = require('../models/ProductsModel')
 const validate=require ('../config/auth')
 
 // Method : GET  || API : localhost:3000/products/all
-router.get('/all',validate, async (req, res) => {
+router.get('/all', async (req, res) => {
     try {
         const products = await Products.find()
         res.status(200).json(products)
@@ -14,7 +14,7 @@ router.get('/all',validate, async (req, res) => {
 })
 
 // Method : POST  || API : localhost:3000/products/add
-router.post('/add', async (req, res) => {
+router.post('/add', validate,async (req, res) => {
     try {
         const newproduct = new Products(req.body)
         const { title, img, price } = newproduct
