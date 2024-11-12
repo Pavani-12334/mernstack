@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import AdminPageHeader from '../../components/Admin/AdminPageHeader'
 import { Loader2, Pencil, Plus, Trash, TriangleAlert, X } from 'lucide-react'
 import { getProducts, addProduct } from '../../api/api'
+import {Toaster} from'sonner'
 
 const AdminProducts = () => {
   //null -> products[] | Store the data
