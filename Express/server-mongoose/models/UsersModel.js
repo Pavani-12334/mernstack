@@ -8,19 +8,23 @@ const UsersSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true,
-        unique:true
+        unique: true
     },
     phone: {
         type: Number,
         required: true,
-        unique:true
+        unique: true
+    },
+    role: {
+        type: String,
+        enum: ["ADMIN", "USER"],
+        required: true
     },
     password: {
         type: String,
         required: true,
-
     },
-    password: {
+    address: {
         type: String,
         required: false,
     },
@@ -29,5 +33,3 @@ const UsersSchema = new mongoose.Schema({
 const Users = mongoose.model("Users", UsersSchema)
 
 module.exports = Users
-
-
