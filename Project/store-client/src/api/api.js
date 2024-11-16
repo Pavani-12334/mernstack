@@ -31,7 +31,10 @@ const editProduct = (product, id) => axios.put(`${API}/products/edit/${id}`, pro
 const deleteProduct = (id) => axios.delete(`${API}/products/delete/${id}`)
 
 // OrderEndPonts
+
 const getOrders = () => axios.get(`${API}/orders/all`)
+const addOrder = (order) => axiosInstance.post('/orders/add', order)
+
 const getOrdersCount = () => axios.get(`${API}/orders/count`)
 const deleteOrder = (id) => axios.delete(`${API}/orders/delete/${id}`)
 
@@ -62,6 +65,8 @@ export {
     deleteUser,
     resetPassword,
     getOrders,
+    addOrder,
+
     getOrdersCount,
     deleteOrder
 }
